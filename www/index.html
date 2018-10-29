@@ -151,7 +151,7 @@
 
     // 変数宣言
     var active=false;
-    var smartTime=0;
+    var startTime=0;
 
     
     // ボタンの初期設定
@@ -165,14 +165,14 @@
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
         active=true;
-        smartTime=new Date();
-        
+        startTime=new Date();
+       
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         
-        
+        active=false;
     }
 
     // ButtonCがクリックされた時の処理
@@ -193,7 +193,11 @@
  
     // 繰り返し実行する処理
     function timer(){  
-        
+         if(active==true){
+          var currentTime=new Date();
+          var time=(currentTime - startTime)/1000;
+          $("#time").html("経過時間："+parseInt(time));
+        }
         
     } 
 

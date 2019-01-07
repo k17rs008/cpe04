@@ -17,18 +17,10 @@
   <script src="keys.js"></script>
   <script>
      
-     var ncmb=new NCMB(appKey,cliKey);
-     var Test3=ncmb.DataStore("Test3");
-     var test3=new Test3();
-     test3.set("message3""hello,world")
-        .save()
-        .then(function(m)){
-          alert("success:"+JSON.stringify(m));
-        })
-        .catch(function(m)){
-          alert("fail:"+JSON.stringify(m));
-        });
-
+    var ncmb=new NCMB(appKey,cliKey);
+    var TestClass2=ncmb.DataStore("TestClass2");
+    var testClass2=new TestClass2();
+    testClass2.set("message2","hello,world").save();
     // timer処理
     $(function(){
         setInterval(function(){

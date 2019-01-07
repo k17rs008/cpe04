@@ -10,10 +10,25 @@
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
   <link rel="stylesheet" href="css/style.css">
+
   <style>
 
   </style>
+  <script src="keys.js"></script>
   <script>
+     
+     var ncmb=new NCMB(appKey,cliKey);
+     var Test3=ncmb.DataStore("Test3");
+     var test3=new Test3();
+     test3.set("message3""hello,world")
+        .save()
+        .then(function(m)){
+          alert("success:"+JSON.stringify(m));
+        })
+        .catch(function(m)){
+          alert("fail:"+JSON.stringify(m));
+        });
+
     // timer処理
     $(function(){
         setInterval(function(){
@@ -214,7 +229,7 @@
         }
         
     } 
-
+     
   </script>
 </head>
 <body>
